@@ -2,7 +2,7 @@
 package dbs
 
 import (
-	"github.com/zyl156/gokit/common/ssh"
+	"github.com/zyl-dev/gokit/common/ssh"
 
 	// nogolint
 	"time"
