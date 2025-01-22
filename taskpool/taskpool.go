@@ -2,7 +2,7 @@ package workerpool
 
 import (
 	"fmt"
-	"github.com/zeromicro/go-zero/core/logx"
+	logx "github.com/sirupsen/logrus"
 	"sync"
 )
 
