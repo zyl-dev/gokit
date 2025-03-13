@@ -28,6 +28,7 @@ func Debug(logs ...interface{}) {
 	fmt.Println(file+":"+strconv.Itoa(line), data)
 }
 
+// PageSize 分页操作
 func PageSize(page, pageSize int) (int, int, int) {
 	if page == 0 {
 		page = 1
@@ -39,6 +40,7 @@ func PageSize(page, pageSize int) (int, int, int) {
 	return page, pageSize, offset
 }
 
+// StringsSplit 字符串分隔
 func StringsSplit(str string) []string {
 	if str == "" {
 		return nil
@@ -124,6 +126,7 @@ func GetRandString(prefix string) string {
 	return prefix + time.Now().Local().Format("20060102150405") + hex.EncodeToString(bt)
 }
 
+// GetDateOfDay 获取某月第几天日期
 func GetDateOfDay(months string, day int) (string, error) {
 	// 检查月份和天数是否有效
 	pt, err := time.Parse("2006-01", months)
@@ -149,8 +152,7 @@ func GetDateOfDay(months string, day int) (string, error) {
 	return t.Format("2006-01-02"), nil
 }
 
-// SliceOperator SliceOperate 切片操作
-// 获取两切片的 合集 交集 差值(A—B) 差值(B—A)
+// SliceOperator SliceOperate 切片操作  获取两切片的 合集 交集 差值(A—B) 差值(B—A)
 func SliceOperator[T any](A, B []T, equalFunc func(a, b T) bool) (union, intersection, differenceAB, differenceBA []T) {
 	// 使用切片来存储元素
 	var setA []T
